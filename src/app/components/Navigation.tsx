@@ -15,6 +15,7 @@ export default function Navigation() {
         setShowNav(true);
       } else {
         setShowNav(false);
+        setIsMobileMenuOpen(false); // Close mobile menu when scrolling past hero
       }
     };
 
@@ -53,41 +54,47 @@ export default function Navigation() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu Button */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed top-6 right-6 z-50 md:hidden p-3 bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg"
-        aria-label="Toggle menu"
-      >
-        <motion.div
-          animate={isMobileMenuOpen ? 'open' : 'closed'}
-          className="w-6 h-5 flex flex-col justify-between"
-        >
-          <motion.span
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: 8 }
-            }}
-            className="w-full h-0.5 bg-white rounded-full"
-          />
-          <motion.span
-            variants={{
-              closed: { opacity: 1 },
-              open: { opacity: 0 }
-            }}
-            className="w-full h-0.5 bg-white rounded-full"
-          />
-          <motion.span
-            variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: -8 }
-            }}
-            className="w-full h-0.5 bg-white rounded-full"
-          />
-        </motion.div>
-      </motion.button>
+      {/* Mobile Menu Button - Only shows when showNav is true */}
+      <AnimatePresence>
+        {showNav && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="fixed top-6 right-6 z-50 md:hidden p-3 bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg"
+            aria-label="Toggle menu"
+          >
+            <motion.div
+              animate={isMobileMenuOpen ? 'open' : 'closed'}
+              className="w-6 h-5 flex flex-col justify-between"
+            >
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: 45, y: 8 }
+                }}
+                className="w-full h-0.5 bg-white rounded-full"
+              />
+              <motion.span
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 }
+                }}
+                className="w-full h-0.5 bg-white rounded-full"
+              />
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: -45, y: -8 }
+                }}
+                className="w-full h-0.5 bg-white rounded-full"
+              />
+            </motion.div>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu */}
       <AnimatePresence>
