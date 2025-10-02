@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  * {
+    @apply border-slate-700;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+/* Add this to your global CSS or Tailwind config for reuse */
+
+.btn-glass {
+  @apply bg-white/20 backdrop-blur-lg border border-white/30 text-white shadow-lg shadow-white/10 rounded-xl transition duration-300 ease-in-out;
+
+  /* Optional: add smooth hover effect */
+  &:hover {
+    @apply bg-white/30 border-white/40 shadow-white/20;
+  }
+}
