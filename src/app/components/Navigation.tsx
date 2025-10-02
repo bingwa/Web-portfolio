@@ -9,11 +9,8 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Amount user has scrolled vertically
       const scrollY = window.scrollY;
 
-      // Show navigation only if scroll is within hero section height (adjust as needed)
-      // Assume hero section min height is ~100vh (window height)
       if (scrollY < window.innerHeight * 0.9) {
         setShowNav(true);
       } else {
@@ -47,8 +44,6 @@ export default function Navigation() {
         >
           <GooeyNav
             items={navItems}
-            activeColor="#3b82f6"
-            inactiveColor="#64748b"
           />
         </motion.div>
       )}
