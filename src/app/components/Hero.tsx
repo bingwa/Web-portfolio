@@ -63,7 +63,7 @@ export default function Hero() {
           <TextType
             text="Full-Stack Developer & Data Scientist"
             className="text-2xl md:text-3xl lg:text-4xl text-slate-100 font-heading tracking-wide"
-            duration={80}
+            typingSpeed={80}
           />
         </div>
         
