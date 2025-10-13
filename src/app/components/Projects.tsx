@@ -27,6 +27,14 @@ const projects = [
     image: '/projects/FAA.png', // Add your screenshot here
     tech: ['React', 'Supabase', 'Tailwind', 'Vercel'],
     link: 'www.fuelingafricanaviation.com'
+  },
+  {
+    id: 4,
+    title: 'Uncover Kenya Blog',
+    description: 'A modern day blog made for Kenyans to inform them on the many ways the current government is failing them',
+    image: '/projects/uncover.png', // Add your screenshot here
+    tech: ['React', 'Neon', 'Tailwind', 'Vercel'],
+    link: 'https://uncover-delta.vercel.app'
   }
 ];
 
