@@ -35,7 +35,16 @@ const projects = [
     image: '/projects/uncover.png', // Add your screenshot here
     tech: ['React', 'Neon', 'Tailwind', 'Vercel'],
     link: 'https://uncover-delta.vercel.app'
+  },
+  {
+    id: 5,
+    title: 'Kowluxe',
+    description: 'An online store plus landing page used to showcase and advertise hair oil products by a brand known as kowluxe based in the United States',
+    image:'/projects/kow.png',
+    tech:['NextJs','Vercel','Typescript','Shopify'],
+    link:'https://www.kowluxe.com/'
   }
+
 ];
 
 export default function Projects() {
